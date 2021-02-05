@@ -1,7 +1,7 @@
 // 创建自定义面板，同一个插件可以创建多个自定义面板
 // 几个参数依次为：panel标题、图标（其实设置了也没地方显示）、要加载的页面、加载成功后的回调
 chrome.devtools.panels.create('自定义面板','../img/icon.png','../html/devtools_panels.html',function(){
-	console.log('创建成功开发中面板成功')
+	console.log('创建开发者面板成功')
 })
 
 chrome.devtools.panels.setOpenResourceHandler(function(e){

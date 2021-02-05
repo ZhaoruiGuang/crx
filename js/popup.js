@@ -13,19 +13,16 @@ $.ajax({
 	}
 })
 
-// 创建一个简单的文字通知：
-var notification = webkitNotifications.createNotification(
-  '48.png',  // icon url - can be relative
-  'Hello!',  // notification title
-  'Lorem ipsum...'  // notification body text
-);
 
-// // 或者创建一个 HTML 通知：
-// var notification = webkitNotifications.createHTMLNotification(
-//   '../html/notification.html'  // html url - can be relative
-// );
-
-// 显示通知
+// 浏览器通知框
 $('#notifyBtn').click(function(e){
-	notification.show();
+	// 创建一个简单的文字通知：
+	chrome.notifications.create(null, {
+		type: 'basic',   // basic   image   list  progress
+		iconUrl: '../img/icon.png',
+		title: '插件通知',
+		message: '这是一个插件通知弹框！'
+	});
+	
+	chrome.extension.getBackgroundPage().consoleA();
 })

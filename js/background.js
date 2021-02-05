@@ -1,3 +1,8 @@
+// 供其他插件页面脚本调用的方法
+function consoleA(){
+	console.log('aaaaaaa')
+}
+
 // 配合 manifest.json 里的 page_action 项,指定在访问某些特定网址时才显示插件图标,例如 baidu.com
 chrome.runtime.onInstalled.addListener(function(){
 	chrome.declarativeContent.onPageChanged.removeRules(undefined, function(){
