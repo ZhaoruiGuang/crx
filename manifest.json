@@ -48,6 +48,7 @@
 	// 普通页面能够直接访问的插件资源列表，如果不设置是无法直接访问的
 	"web_accessible_resources": [
 		"js/inject.js",
+		"js/inject2.js",
 		"img/wallpaper.png"
 	],
 	// 需要直接注入页面的JS
@@ -57,7 +58,7 @@
 			// "<all_urls>" 表示匹配所有地址
 			"matches": ["<all_urls>"],
 			// 多个JS按顺序注入
-			"js": ["js/inject.js","js/insert.js"],
+			"js": ["js/inject.js","js/inject2.js","js/insert.js"],
 			"css":["css/inject.css"],
 			// 代码注入的时间，可选值： "document_start", "document_end", or "document_idle"，最后一个表示页面空闲时，默认document_idle
 			// 如果在 document_start 注入,一些 dom 操作会操作,因为这时页面还没有生成 dom 结构

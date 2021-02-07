@@ -1,6 +1,7 @@
 // 供其他插件页面脚本调用的方法
 function consoleA(){
 	console.log('aaaaaaa')
+	return 'aaaaaa';
 }
 
 // 配合 manifest.json 里的 page_action 项,指定在访问某些特定网址时才显示插件图标,例如 baidu.com
@@ -45,7 +46,7 @@ chrome.contextMenus.create({
 	onclick: function(){
 		// alert('您点击了右键菜单2！');
 		
-		// 向页面注入脚本
+		// 向页面注入 js
 		chrome.tabs.executeScript(
 			null,
 			{
@@ -53,6 +54,15 @@ chrome.contextMenus.create({
 				file: "insert.js"			// 注入一个 js 文件
 			},
 		);
+		
+		// 向页面注入 css
+		// chrome.tabs.insertCSS(
+		// 	tabId, 
+		// 	{
+		// 		code: 'xxx',
+		// 		file:'xxx.css'
+		// 	},
+		// );
 	}
 });
 
@@ -66,6 +76,3 @@ chrome.contextMenus.create({
 	}
 });
 
-// chrome.storage.set({
-// 	name:'zhao'
-// })
